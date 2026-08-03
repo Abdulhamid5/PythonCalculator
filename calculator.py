@@ -12,12 +12,22 @@ def multiply(a, b):
 def divide(a, b):
     return a / b
 
+def get_number(message):
+    while True:
+        try:
+            return int(input(message))
+        except:
+            print("Please enter a valid number")
+
 while True:
-    user_choice = int(input("press 1 to add, 2 to subtract, 3 to multiply, 4 to divide "))
+    try:
+        user_choice = int(input("press 1 to add, 2 to subtract, 3 to multiply, 4 to divide "))
+    except:
+        print("Please enter a valid number")
+        continue
 
-    first_number = int(input("enter first number "))
-
-    second_number = int(input("enter second number "))
+    first_number = get_number("Enter first number: ")
+    second_number = get_number("Enter second number: ")
 
 
 
