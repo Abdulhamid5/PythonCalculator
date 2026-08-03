@@ -1,5 +1,3 @@
-print("Welcome to the python calculator")
-
 def add(a, b):
     return a + b
 
@@ -20,16 +18,28 @@ def get_number(message):
             print("Please enter a valid number")
 
 while True:
+    print("""
+    ====================
+    Python Calculator
+    ====================
+
+    1. Add
+    2. Subtract
+    3. Multiply
+    4. Divide
+    5. Exit
+    """)
     try:
-        user_choice = int(input("press 1 to add, 2 to subtract, 3 to multiply, 4 to divide "))
+        user_choice = int(input("Choose an operation: "))
     except:
         print("Please enter a valid number")
         continue
 
+    if user_choice == 5:
+        break
+    
     first_number = get_number("Enter first number: ")
     second_number = get_number("Enter second number: ")
-
-
 
     if user_choice == 1:
         print(add(first_number, second_number))
@@ -42,15 +52,9 @@ while True:
 
     elif user_choice == 4:
         if second_number == 0:
-            print("You can't divide by zero.")
+            print("You can't divide by zero.")        
         else:
             print(divide(first_number, second_number))
 
     else:
         print("Invalid choice")
-
-
-    answer = input("continue? y/n")
-    answer = answer.lower()
-    if answer == "n":
-        break
